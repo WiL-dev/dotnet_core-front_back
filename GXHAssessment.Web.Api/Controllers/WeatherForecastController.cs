@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using GXHAssessment.Web.Api.Models;
 
 namespace GXHAssessment.Web.Api.Controllers;
 

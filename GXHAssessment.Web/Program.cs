@@ -1,7 +1,12 @@
+using GXHAssessment.Web.Services;
+using GXHAssessment.Web.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient<IWeatherForecastService, WeatherForecastService>(c =>
+c.BaseAddress = new Uri("http://localhost:5062/"));
 
 var app = builder.Build();
 

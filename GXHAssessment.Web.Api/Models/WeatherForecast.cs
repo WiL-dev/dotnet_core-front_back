@@ -1,4 +1,4 @@
-namespace GXHAssessment.Web.Api;
+namespace GXHAssessment.Web.Api.Models;
 
 public class WeatherForecast
 {
