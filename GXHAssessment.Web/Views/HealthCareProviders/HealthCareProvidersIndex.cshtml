@@ -1,0 +1,28 @@
+@model GXHAssessment.Web.Models.HealthCareProviderResultModel
+
+<br />
+<br />
+<table class="table">
+    <tdead>
+        <tr>
+            <th>NPI</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Credential</th>
+            <th>Status</th>
+        </tr>
+    </tdead>
+    <tbody>
+        @foreach (var healthCareProvider in Model.results)
+        {
+            <tr>
+                <td>@healthCareProvider.number</td>
+                <td>@healthCareProvider?.basic?.first_name</td>
+                <td>@healthCareProvider?.basic?.last_name</td>
+                <td>@healthCareProvider?.basic?.credential</td>
+                <td>@healthCareProvider?.basic?.status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

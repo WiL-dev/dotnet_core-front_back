@@ -5,8 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddHttpClient<IWeatherForecastService, WeatherForecastService>(c =>
-c.BaseAddress = new Uri("http://localhost:5062/"));
+builder.Services.AddHttpClient<IWeatherForecastService, WeatherForecastService>
+(
+    c => c.BaseAddress = new Uri("http://localhost:5062/")
+);
+builder.Services.AddHttpClient<IHealthCareProviderService, HealthCareProviderService>(
+    c => c.BaseAddress = new Uri("http://localhost:5062/")
+);
 
 var app = builder.Build();
 
