@@ -19,6 +19,10 @@ public static class HttpClientExtensions
                 PropertyNameCaseInsensitive = true
             });
 
+        //TODO: Add a better "result == null" management
+        if (result == null)
+            throw new ApplicationException("No results calling the api API");
+
         return result;
     }
 }

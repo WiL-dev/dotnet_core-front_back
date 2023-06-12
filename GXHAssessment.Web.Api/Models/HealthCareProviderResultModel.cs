@@ -2,6 +2,27 @@ namespace GXHAssessment.Web.Api.Models;
 
 //TODO: Change the name of the properties
 //https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-7-0#deserialize-from-utf-8
+public class HealthCareProviderResultModel
+{
+    public int result_count { get; set; }
+    public List<Result>? results { get; set; }
+}
+
+public class Result
+{
+    public string? created_epoch { get; set; }
+    public string? enumeration_type { get; set; }
+    public string? last_updated_epoch { get; set; }
+    public string? number { get; set; }
+    public List<Address>? addresses { get; set; }
+    public List<object>? practiceLocations { get; set; }
+    public Basic? basic { get; set; }
+    public List<Taxonomy>? taxonomies { get; set; }
+    public List<Identifier>? identifiers { get; set; }
+    public List<object>? endpoints { get; set; }
+    public List<object>? other_names { get; set; }
+}
+
 public class Address
 {
     public string? country_code { get; set; }
@@ -42,27 +63,6 @@ public class Identifier
     public string? state { get; set; }
 }
 
-public class Result
-{
-    public string? created_epoch { get; set; }
-    public string? enumeration_type { get; set; }
-    public string? last_updated_epoch { get; set; }
-    public string? number { get; set; }
-    public List<Address>? addresses { get; set; }
-    public List<object>? practiceLocations { get; set; }
-    public Basic? basic { get; set; }
-    public List<Taxonomy>? taxonomies { get; set; }
-    public List<Identifier>? identifiers { get; set; }
-    public List<object>? endpoints { get; set; }
-    public List<object>? other_names { get; set; }
-}
-
-public class HealthCareProviderResult
-{
-    public int result_count { get; set; }
-    public List<Result>? results { get; set; }
-}
-
 public class Taxonomy
 {
     public string? code { get; set; }
@@ -72,4 +72,3 @@ public class Taxonomy
     public string? license { get; set; }
     public bool primary { get; set; }
 }
-

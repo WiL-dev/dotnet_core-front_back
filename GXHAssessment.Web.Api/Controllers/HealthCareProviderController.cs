@@ -22,13 +22,13 @@ public class HealthCareProviderController: ControllerBase
     }
 
     [HttpGet]
-    public async Task<HealthCareProviderResult> Get()
+    public async Task<HealthCareProviderResultModel> Get()
     {
         using (HttpClient client = new HttpClient())
         {
             var response = await client.GetAsync(BasePath);
 
-            return await response.ReadContentAsync<HealthCareProviderResult>();
+            return await response.ReadContentAsync<HealthCareProviderResultModel>();
         }
     }
 }
